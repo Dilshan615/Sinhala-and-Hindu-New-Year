@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="si">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>happy New Year!</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/1788/1788866.png">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            avurudu: {
+              dark: "#2a0404",
+              red: "#7f1010",
+              orange: "#9a2a06",
+              yellow: "#d99706",
+              gold: "#fde047",
+            },
+          },
+          animation: {
+            'spin-slow': 'spin-slow 20s linear infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'wobble': 'wobble 4s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            wobble: {
+              '0%': {
+                transform: 'rotate(-5deg)'
+              },
+              '100%': {
+                transform: 'rotate(5deg)'
+              }
+            }
+          }
+        },
+      },
+    };
+  </script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css?v=4" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;700&family=Playfair+Display:ital,wght@1,600&display=swap');
+
+    body {
+      font-family: 'Playfair Display', serif;
+      /* For English Cursive */
+    }
+
+    .sinhala-text {
+      font-family: 'Noto Sans Sinhala', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Sunny Aura Background matching the image */
+    .sunny-aurora {
+      background: linear-gradient(170deg, #ffe031 0%, #ffbb00 30%, #ff8800 70%, #e65c00 100%);
+    }
+
+    /* Glowing Sun Rays */
+    .glowing-rays {
+      background: repeating-conic-gradient(from 0deg,
+          rgba(255, 150, 0, 0.4) 0deg 10deg,
+          transparent 10deg 20deg);
+      border-radius: 50%;
+      mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
+      -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
+    }
+
+    /* Text Shadows for clarity */
+    .text-outline-white {
+      text-shadow:
+        0px 0px 8px rgba(255, 255, 255, 0.8),
+        1px 1px 0px rgba(255, 255, 255, 1),
+        -1px -1px 0px rgba(255, 255, 255, 1),
+        1px -1px 0px rgba(255, 255, 255, 1),
+        -1px 1px 0px rgba(255, 255, 255, 1);
+    }
+
+    /* Slow gentle float for elements */
+    .gentle-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Smooth reveal */
+    @keyframes pop-reveal {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-pop-reveal {
+      animation: pop-reveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+  </style>
+</head>
+
+<body
+  id="main-body"
+  class="bg-[#210000] h-screen w-screen overflow-hidden transition-colors duration-[2000ms] relative">
+  <audio id="raban-audio" src="audio/raban.mp3" preload="auto"></audio>
+
+  <!-- Phase 2: Modern Premium Envelope (We keep it red to contrast nicely) -->
+  <div
+    id="envelope-container"
+    class="absolute inset-0 flex items-center justify-center z-40 perspective-[1000px]">
+    <div
+      id="envelope"
+      class="group cursor-pointer relative w-[340px] h-[240px] transition-transform duration-500 hover:scale-105 gentle-float mt-10">
+      <!-- Envelope Back -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#800000] to-[#400000] rounded-xl shadow-[0_25px_50px_rgba(0,0,0,0.8)] border border-red-900/50"></div>
+
+      <!-- Flap (Top) -->
+      <div
+        id="envelope-flap"
+        class="envelope-flap absolute top-0 left-0 w-0 h-0 border-l-[170px] border-l-transparent border-r-[170px] border-r-transparent border-t-[140px] border-t-[#a01212] z-10 drop-shadow-xl"></div>
+
+      <!-- Left side -->
+      <div
+        class="absolute top-0 left-0 w-0 h-0 border-t-[120px] border-t-transparent border-b-[120px] border-b-transparent border-l-[170px] border-l-[#500000] z-20"></div>
+
+      <!-- Right side -->
+      <div
+        class="absolute top-0 right-0 w-0 h-0 border-t-[120px] border-t-transparent border-b-[120px] border-b-transparent border-r-[170px] border-r-[#500000] z-20"></div>
+
+      <!-- Bottom side -->
+      <div
+        class="absolute bottom-0 left-0 w-0 h-0 border-l-[170px] border-l-transparent border-r-[170px] border-r-transparent border-b-[130px] border-b-[#c01010] z-30 drop-shadow-2xl"></div>
+
+      <!-- Premium Golden Wax Seal -->
+      <div
+        class="absolute top-[135px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-[#ffda54] to-[#c78800] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(255,215,0,0.5)] border-2 border-[#fff09e] z-40 transition-transform duration-300 group-hover:scale-110">
+        <div class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.4)] flex items-center justify-center text-[#5a3800] font-bold text-xl">
+          🌞
+        </div>
+      </div>
+
+      <!-- Instructions -->
+      <p
+        id="envelope-text"
+        class="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-white/70 text-[12px] uppercase tracking-[0.4em] whitespace-nowrap z-50 animate-pulse transition-opacity duration-300">
+        Click to Reveal
+      </p>
+    </div>
+  </div>
+
+  <!-- Phase 3: Festive Reveal (Perfect match to the provided image design) -->
+  <!-- The huge warm sunny background revealed upon click -->
+  <div id="sunburst-bg" class="hidden absolute inset-0 z-10 overflow-hidden pointer-events-none opacity-0 transition-opacity duration-[2000ms] sunny-aurora">
+  </div>
+
+  <div
+    id="greeting-container"
+    class="hidden absolute inset-0 flex flex-col items-center justify-start pt-10 z-30 overflow-hidden text-center animate-pop-reveal w-full">
+    <!-- Corner Decorative Flowers (Erabadu substitution) -->
+    <div class="absolute top-[-20px] left-[-20px] text-5xl md:text-8xl animate-wobble transform rotate-45 origin-top-left opacity-90 filter drop-shadow-xl" style="animation-delay: 0.5s;">
+      🌿🌺🌿
+    </div>
+    <div class="absolute top-[-20px] right-[-20px] text-5xl md:text-8xl animate-wobble transform -rotate-45 origin-top-right opacity-90 filter drop-shadow-xl" style="animation-delay: 1.5s;">
+      🌿🌺🌿
+    </div>
+
+    <!-- Center Majestic Sun Symbol -->
+    <div class="relative w-40 h-40 md:w-56 md:h-56 mt-4 md:mt-10 mb-8 flex items-center justify-center">
+      <!-- Revolving Rays -->
+      <div class="absolute inset-0 w-[400px] h-[400px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 glowing-rays animate-spin-slow pointer-events-none z-0"></div>
+
+      <!-- Sun Emoji glowing deeply -->
+      <div class="absolute z-10 text-8xl md:text-[9rem] filter drop-shadow-[0_0_30px_rgba(255,50,0,1)] animate-pulse-slow">
+        🌞
+      </div>
+    </div>
+
+    <!-- Sinhala Greeting precisely as requested -->
+    <div class="relative z-20 mt-10 md:mt-6 px-4">
+      <p class="sinhala-text text-white text-4xl md:text-6xl font-bold tracking-wide drop-shadow-[0_4px_8px_rgba(150,50,0,0.8)] mb-8 text-outline-white">
+        <span class="text-white drop-shadow-none" style="text-shadow: 0 4px 6px rgba(180,50,0,0.6);">සුභ අලුත් අවුරුද්දක් වේවා</span>
+      </p>
+      <p class="sinhala-text text-white text-1xl md:text-3xl font-medium tracking-wide drop-shadow-[0_3px_5px_rgba(150,50,0,0.8)] mb-2 text-outline-white">
+        <span class="text-white drop-shadow-none" style="text-shadow: 0 4px 6px rgba(180,50,0,0.6);">ඔබටත් ඔබගේ පවුලේ සියලු දෙනාටත් සාමය, </span>
+      </p>
+      <p class="sinhala-text text-white text-1xl md:text-3xl font-medium tracking-wide drop-shadow-[0_3px_5px_rgba(150,50,0,0.8)] mb-2 text-outline-white">
+        <span class="text-white drop-shadow-none" style="text-shadow: 0 4px 6px rgba(180,50,0,0.6);">සතුට හා සෞභාග්‍යය පිරි සුභ නව වසරක් වේවා</span>
+      </p>
+
+
+      <!-- English Cursive Greeting precisely as requested -->
+      <p class="text-white text-2xl md:text-4xl italic font-semibold leading-relaxed mt-10" style="text-shadow: 0 3px 5px rgba(180,50,0,0.6);">
+        May you have a peaceful and happy <br>
+        Sinhala and Hindu New Year.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js?v=6"></script>
+  <script>
+    // Force change background inside script directly to orange instead of dark red
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainBody = document.getElementById('main-body');
+      // Override the class addition in script.js that made it dark
+      setTimeout(() => {
+        if (mainBody.classList.contains('from-avurudu-dark')) {
+          mainBody.className = "bg-[#ff8800] h-screen w-screen overflow-hidden transition-colors duration-[2000ms] relative";
+        }
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
